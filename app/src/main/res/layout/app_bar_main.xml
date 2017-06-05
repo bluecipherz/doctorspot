@@ -4,30 +4,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rinoy.doctorspot.MainActivity">
+    tools:context="com.example.rinoy.doctor.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar"
+            app:elevation="0dp"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-    </android.support.design.widget.AppBarLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:textAlignment="center">
 
-    <include layout="@layout/content_main" />
+                <TextView
+                    style="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="DOCTOR SPOT"
+                    tools:typeface="monospace"
+                    android:textSize="17dp"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+            </android.support.v7.widget.Toolbar>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+            <android.support.v4.widget.DrawerLayout
+                android:id="@+id/drawer_layout"
+                android:layout_below="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:openDrawer="start">
+
+
+                <FrameLayout
+                    android:id="@+id/main_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+                <android.support.design.widget.NavigationView
+                    android:id="@+id/nav_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:textAlignment="center"
+                    app:headerLayout="@layout/nav_header_main"
+                    app:menu="@menu/activity_main_drawer">
+
+                    <TextView
+                        style="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="70dp"
+                        android:layout_marginTop="64dp"
+                        android:text="ROSHIN HANJAS"
+                        tools:typeface="monospace"
+                        android:textSize="14dp"
+                        android:textColor="#fff"/>
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:theme="@style/MySwitch"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="120dp" />
+
+                    <TextView
+                        style="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="47dp"
+                        android:layout_marginTop="126dp"
+                        android:text="NOTIFICATIONS"
+                        tools:typeface="monospace"
+                        android:textSize="9dp"
+                        android:textColor="#fff"/>
+
+                </android.support.design.widget.NavigationView>
+
+             </android.support.v4.widget.DrawerLayout>
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>
